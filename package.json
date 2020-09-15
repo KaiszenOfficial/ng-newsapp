@@ -1,0 +1,16 @@
+{
+	"name": "ng-newsapp",
+	"version": "1.0.0",
+	"description": "simple client and server for a desktop/browser news application",
+	"main": "main.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"electron": "electron ."
+	},
+	"author": "Supratik Roy",
+	"license": "MIT",
+	"devDependencies": {
+		"electron": "^10.1.1"
+	},
+	"dependencies": {}
+}
