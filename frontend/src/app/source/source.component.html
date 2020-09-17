@@ -1,0 +1,7 @@
+<mat-toolbar class="section-header">
+	<span>Sources</span>
+</mat-toolbar>
+
+<mat-selection-list [multiple]="false" (selectionChange)="onSourceChange()" [(ngModel)]="source">
+	<mat-list-option *ngFor="let source of sources; let i = index" [value]="source.id"> {{source.name}} </mat-list-option>
+</mat-selection-list>

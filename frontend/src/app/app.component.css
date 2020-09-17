@@ -1,0 +1,24 @@
+.container {
+	padding: 0.75rem 1.25rem 0 0.75rem;
+	height: calc(700px - 64px);
+}
+
+::ng-deep .mat-grid-list {
+	height: calc(700px - 64px) !important;
+	padding-bottom: 0 !important;
+}
+
+::ng-deep .mat-grid-tile {
+	height: calc(700px - 64px) !important;
+	padding-top: 0 !important;
+}
+
+::ng-deep .mat-figure {
+	justify-content: left !important;
+	align-items: flex-start !important;
+	height: calc(700px - 64px) !important;
+}
+
+::ng-deep .mat-list-option {
+	font-size: 14px !important;
+}

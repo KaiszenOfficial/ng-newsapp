@@ -1,0 +1,16 @@
+<app-header></app-header>
+<div class="container">
+	<mat-grid-list cols="12" gutterSize="15px">
+		<mat-grid-tile colspan="2">
+			<app-source [sources]="sources" *ngIf="sources.length > 0"></app-source>
+		</mat-grid-tile>
+
+		<mat-grid-tile colspan="4">
+			<app-headline [headlines]="headlines" *ngIf="headlines.length > 0"></app-headline>
+		</mat-grid-tile>
+
+		<mat-grid-tile colspan="6">
+			<app-article *ngIf="article"></app-article>
+		</mat-grid-tile>
+	</mat-grid-list>
+</div>

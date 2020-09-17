@@ -17,8 +17,11 @@ app.use(express.urlencoded({ extended: false }));
 
 const APIKEY = process.env.API_KEY;
 
-app.get('/sources', (req, res) => {
-	fetch('https://newsapi.org/v2/sources', {
+app.get('/sources/:language', (req, res) => {
+	let language = req.params.language;
+	let url = `https://newsapi.org/v2/sources?language=${language}`
+
+	fetch(url, {
 		method: 'GET', 
 		headers: {
 			'X-Api-Key': APIKEY
@@ -33,28 +36,11 @@ app.get('/sources', (req, res) => {
 	});
 });
 
-app.get('/headlines/search', (req, res) => {
-	let query = req.query.q;
-
-	fetch(`https://newsapi.org/v2/top-headlines?q=${query}`, {
-		method: 'GET', 
-		headers: {
-			'X-Api-Key': APIKEY
-		}
-	})
-	.then(response => response.json())
-	.then(data => {
-		return res.status(200).send({ headlines: data.articles, total: data.totalResults }).end();
-	})
-	.catch(error => {
-		return res.status(500).send(error).end();
-	});
-});
-
 app.get('/headlines/:source', (req, res) => {
 	let source = req.params.source;
+	let url = `https://newsapi.org/v2/top-headlines?sources=${source}`
 
-	fetch(`https://newsapi.org/v2/top-headlines?sources=${source}`, {
+	fetch(url, {
 		method: 'GET', 
 		headers: {
 			'X-Api-Key': APIKEY
@@ -68,6 +54,26 @@ app.get('/headlines/:source', (req, res) => {
 		return res.status(500).send(error).end();
 	});
 });
+
+app.get('/article/search', (req, res) => {
+	let query = req.query.q;
+	let url = `https://newsapi.org/v2/everything?q=${query}`
+
+	fetch(url, {
+		method: 'GET', 
+		headers: {
+			'X-Api-Key': APIKEY
+		}
+	})
+	.then(response => response.json())
+	.then(data => {
+		return res.status(200).send({ headlines: data.articles, total: data.totalResults }).end();
+	})
+	.catch(error => {
+		return res.status(500).send(error).end();
+	});
+});
+
 
 const server = http.createServer(app);
 
@@ -76,4 +82,4 @@ const port = process.env.PORT;
 
 server.listen(port, host, () => {
 	debug('Listening on %s:%s', host, port);
-})
+});

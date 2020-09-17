@@ -1,0 +1,30 @@
+.section-header {
+	display: flex !important;
+	align-items: center !important;
+	justify-content: space-between !important;
+	flex-direction: row !important;
+	background-color: transparent;
+}
+
+::ng-deep .mat-grid-tile {
+	overflow-y: auto !important;
+}
+
+::ng-deep .mat-list-option {
+	margin: 10px 0;
+}
+
+::ng-deep .mat-form-field {
+	width: 100% !important;
+}
+
+.search-icon {
+	cursor: pointer;
+}
+
+
+.hide {
+	display: none;
+	width: 0 !important;
+	transition: all 0.5s ease-in-out;
+}

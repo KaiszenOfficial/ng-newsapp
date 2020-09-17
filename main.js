@@ -19,7 +19,7 @@ function createWindow() {
 
 	mainWindow.loadURL(
 		url.format({
-			pathname: path.join(__dirname, 'client/dist/ng-newsapp/index.html'),
+			pathname: path.join(__dirname, 'frontend/dist/ng-newsapp/index.html'),
 			protocol: 'file',
 			slashes: true
 		})
