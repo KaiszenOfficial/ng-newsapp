@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../services/shared.service';
 
 @Component({
-	selector: 'app-app-loader',
+	selector: 'app-loader',
 	templateUrl: './app-loader.component.html',
 	styleUrls: ['./app-loader.component.css']
 })

@@ -1,4 +1,4 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="basic" class="mat-elevation-z8">
 	<span>NG NEWSAPP <small style="font-size: 10px; font-style: italic;">Powerd by NewsAPI</small></span>
 	<span class="spacer"></span>
 
@@ -6,7 +6,7 @@
 		<mat-icon>language</mat-icon> {{defaultLanguage?.code}}
 	</button>
 	<mat-menu #menu="matMenu">
-		<button mat-menu-item *ngFor="let language of languageSelection">
+		<button mat-menu-item *ngFor="let language of languageSelection" (click)="changeLanguage(language)">
 			<span>{{language.name}} - {{language.code}}</span>
 		</button>
 	</mat-menu>

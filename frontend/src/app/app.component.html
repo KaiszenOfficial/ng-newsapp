@@ -1,11 +1,13 @@
 <app-header></app-header>
+
 <div class="container">
-	<mat-grid-list cols="12" gutterSize="15px">
-		<mat-grid-tile colspan="2">
+	<app-loader class="app-loader" *ngIf="isLoading"></app-loader>
+	<mat-grid-list cols="12" gutterSize="15px" *ngIf="!isLoading">
+		<mat-grid-tile colspan="2" class="mat-elevation-z3">
 			<app-source [sources]="sources" *ngIf="sources.length > 0"></app-source>
 		</mat-grid-tile>
 
-		<mat-grid-tile colspan="4">
+		<mat-grid-tile colspan="4" class="mat-elevation-z3">
 			<app-headline [headlines]="headlines" *ngIf="headlines.length > 0"></app-headline>
 		</mat-grid-tile>
 

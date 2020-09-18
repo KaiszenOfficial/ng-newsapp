@@ -18,10 +18,14 @@ export class AppComponent implements OnInit {
 	headlines: Headline[] = [];
 	article: Headline;
 
+	isLoading: boolean;
+
 	constructor(private api: ApiService, private shared: SharedService) { }
 
 	ngOnInit(): void {
+		this.isLoading = true;
 		this.shared.currentLanguage.subscribe(language => {
+			this.isLoading = true;
 			if (language) {
 				this.getSources(language).subscribe(sourceResponse => {
 					this.sources = sourceResponse.sources;
@@ -38,6 +42,7 @@ export class AppComponent implements OnInit {
 					this.article = this.headlines[0];
 					this.shared.currentHeadline.next(this.headlines[0]);
 					this.shared.currentArticle.next(this.formatArticle(this.headlines[0]));
+					this.isLoading = false;
 				});
 			}
 		});

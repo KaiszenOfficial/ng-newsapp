@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 import { languages } from 'src/environments/languages';
-import { countries } from 'src/environments/countries';
 import { SharedService } from '../services/shared.service';
 
 @Component({
@@ -21,6 +20,11 @@ export class HeaderComponent implements OnInit {
 		this.defaultLanguage = languages.find(language => window.navigator.languages.includes(language.code));
 		this.shared.setCurrentLanguage(this.defaultLanguage.code);
 		window.navigator.geolocation.getCurrentPosition(location => console.log(location));
+	}
+
+	changeLanguage(language: any): void {
+		this.defaultLanguage = language;
+		this.shared.setCurrentLanguage(language.code);
 	}
 
 }
