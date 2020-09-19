@@ -11,6 +11,7 @@
 ::ng-deep .mat-grid-tile {
 	height: calc(100% - 64px) !important;
 	padding-top: 0 !important;
+	padding-bottom: 15px !important;
 }
 
 ::ng-deep .mat-figure {

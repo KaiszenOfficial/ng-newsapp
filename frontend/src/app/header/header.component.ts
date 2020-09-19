@@ -17,9 +17,10 @@ export class HeaderComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.languageSelection = languages;
-		this.defaultLanguage = languages.find(language => window.navigator.languages.includes(language.code));
+		this.defaultLanguage = languages.find(language => {
+			return navigator.languages.find(l => l.includes(language.code));
+		});
 		this.shared.setCurrentLanguage(this.defaultLanguage.code);
-		window.navigator.geolocation.getCurrentPosition(location => console.log(location));
 	}
 
 	changeLanguage(language: any): void {
