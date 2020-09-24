@@ -1,5 +1,5 @@
 <mat-form-field class="example-full-width">
-	<input type="text" placeholder="Search" aria-label="Number" matInput [matAutocomplete]="auto" #search>
+	<input type="text" placeholder="Search for articles" aria-label="Number" matInput [matAutocomplete]="auto" #search>
 	<mat-autocomplete #auto="matAutocomplete" (optionSelected)="setCurrentArticle($event.option.value)" [displayWith]="getOptionText">
 		<mat-option *ngFor="let option of options" [value]="option">
 			{{option.title}}
@@ -12,7 +12,7 @@
 		<mat-card-title>{{article?.title}}</mat-card-title>
 		<mat-card-subtitle>{{article?.author}}</mat-card-subtitle>
 	</mat-card-header>
-	<img mat-card-image [src]="article?.urlToImage" alt="Photo">
+	<img mat-card-image [src]="article?.urlToImage" alt="Photo" class="inverted">
 	<mat-card-content>
 		<p>
 			{{article?.content}} <a [href]="article?.url" target="_blank">[Read More]</a>

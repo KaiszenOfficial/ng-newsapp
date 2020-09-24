@@ -1,14 +1,22 @@
 <mat-toolbar color="basic" class="mat-elevation-z8">
-	<span>NG NEWSAPP <small style="font-size: 10px; font-style: italic;">Powerd by NewsAPI</small></span>
+	<span>NG NEWSAPP <small style="font-size: 10px;">Powerd by NewsAPI</small></span>
 	<!-- <button mat-raised-button color="primary" style="margin-left: 20px;">Download App</button> -->
 	<span class="spacer"></span>
 
-	<button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-		<mat-icon>language</mat-icon> - {{defaultLanguage?.code}}
+	<button mat-icon-button [matMenuTriggerFor]="settings">
+		<mat-icon>settings</mat-icon>
 	</button>
-	<mat-menu #menu="matMenu">
-		<button mat-menu-item *ngFor="let language of languageSelection" (click)="changeLanguage(language)">
-			<span>{{language.name}} - {{language.code}}</span>
+	<mat-menu #settings="matMenu">
+		<button mat-menu-item [matMenuTriggerFor]="language">
+			<mat-icon>language</mat-icon>
+			Language
 		</button>
+		<button mat-menu-item>
+			<mat-slide-toggle (change)="handleChangeTheme($event)" [checked]="theme == 'dark'">Dark Mode</mat-slide-toggle>
+		</button>
+	</mat-menu>
+
+	<mat-menu #language="matMenu">
+		<button mat-menu-item *ngFor="let language of languageSelection" (click)="changeLanguage(language)">{{language.name}}</button>
 	</mat-menu>
 </mat-toolbar>

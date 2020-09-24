@@ -36,6 +36,14 @@ export class SharedService {
 		this.currentLocation.next(location);
 	}
 
+	getCurrentTheme(): string {
+		return localStorage.getItem('theme');
+	}
+
+	setTheme(theme: string): void {
+		localStorage.setItem('theme', theme);
+	}
+
 	private formatArticle(article: Headline): Headline {
 		return { ...article, content: article.content.split('[')[0] };
 	}
