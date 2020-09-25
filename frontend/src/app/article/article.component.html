@@ -1,16 +1,18 @@
-<mat-form-field class="example-full-width">
-	<input type="text" placeholder="Search for articles" aria-label="Number" matInput [matAutocomplete]="auto" #search>
-	<mat-autocomplete #auto="matAutocomplete" (optionSelected)="setCurrentArticle($event.option.value)" [displayWith]="getOptionText">
-		<mat-option *ngFor="let option of options" [value]="option">
-			{{option.title}}
-		</mat-option>
-	</mat-autocomplete>
-</mat-form-field>
+<mat-toolbar class="section-header mat-elevation-z3">
+	<mat-form-field class="example-full-width">
+		<input type="text" placeholder="Search for articles" aria-label="Number" matInput [matAutocomplete]="auto" #search>
+		<mat-autocomplete #auto="matAutocomplete" (optionSelected)="setCurrentArticle($event.option.value)" [displayWith]="getOptionText">
+			<mat-option *ngFor="let option of options" [value]="option">
+				{{option.title}}
+			</mat-option>
+		</mat-autocomplete>
+	</mat-form-field>
+</mat-toolbar>
 
 <mat-card>
 	<mat-card-header>
 		<mat-card-title>{{article?.title}}</mat-card-title>
-		<mat-card-subtitle>{{article?.author}}</mat-card-subtitle>
+		<mat-card-subtitle>{{article?.author}} - <small>{{article?.publishedAt | date}}</small></mat-card-subtitle>
 	</mat-card-header>
 	<img mat-card-image [src]="article?.urlToImage" alt="Photo" class="inverted">
 	<mat-card-content>

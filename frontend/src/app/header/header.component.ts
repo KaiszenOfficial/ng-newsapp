@@ -23,7 +23,7 @@ export class HeaderComponent implements OnInit {
 		});
 		this.shared.setCurrentLanguage(this.defaultLanguage.code);
 		const theme = this.shared.getCurrentTheme();
-		this.theme = theme ? theme :  'light';
+		this.theme = theme ? theme : 'dark';
 		this.setTheme(this.theme);
 	}
 
@@ -39,12 +39,6 @@ export class HeaderComponent implements OnInit {
 
 	setTheme(theme: string): void {
 		this.shared.setTheme(theme);
-
-		document.body.classList.toggle('dark');
-
-		document.querySelectorAll('.inverted').forEach(element => {
-			element.classList.toggle('invert');
-		});
 	}
 
 }

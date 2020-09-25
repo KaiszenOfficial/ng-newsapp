@@ -1,26 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
-
-.dark {
-	filter: invert(1) hue-rotate(180deg);
-}
-
-.invert {
-	filter: invert(1) hue-rotate(180deg);
-}
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;700;900&display=swap');
 
 html, body {
 	height: 100%;
-	font-family: 'Poppins', sans-serif !important;
+	font-family: 'Fira Sans', sans-serif !important;
 }
 
 body {
 	margin: 0;
-	font-family: Roboto, "Helvetica Neue", sans-serif;
+	font-family: 'Fira Sans', sans-serif !important;
 	background-color: #303030;
 	color: #ffffff;
 	overflow: hidden;
+}
+
+.mat-typography, .mat-toolbar, .mat-list-option, .mat-card, .mat-form-field {
+	font-family: 'Fira Sans', sans-serif !important;
 }
 
 ::-webkit-scrollbar {
@@ -48,6 +44,6 @@ body {
 }
 
 .container {
-	padding: 1.25rem 1.25rem 0 1.25rem;
+	padding: 1.25rem 2rem 0 2rem;
 	height: calc(100% - 64px);
 }

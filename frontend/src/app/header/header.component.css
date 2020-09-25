@@ -1,8 +1,5 @@
-::ng-deep .mat-toolbar-single-row {
-	/* display: flex !important;
-	align-items: center !important; */
-	/* justify-content: center !important; */
-	/* flex-direction: column !important; */
+.header {
+	padding: 0 2rem;
 }
 
 .spacer {

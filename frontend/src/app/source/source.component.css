@@ -3,7 +3,7 @@
 	align-items: flex-start !important;
 	justify-content: center !important;
 	flex-direction: column !important;
-	background-color: transparent;
+	/* background-color: transparent; */
 }
 
 .example-spacer {

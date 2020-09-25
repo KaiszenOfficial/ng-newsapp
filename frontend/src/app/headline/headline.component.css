@@ -3,7 +3,7 @@
 	align-items: center !important;
 	justify-content: space-between !important;
 	flex-direction: row !important;
-	background-color: transparent;
+	/* background-color: transparent; */
 }
 
 ::ng-deep .mat-grid-tile {
