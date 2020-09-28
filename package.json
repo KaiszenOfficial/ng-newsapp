@@ -1,17 +1,27 @@
 {
 	"name": "ng-newsapp",
 	"version": "1.0.0",
-	"description": "simple client and server for a desktop/browser news application",
-	"main": "main.js",
+	"description": "",
+	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"electron": "electron .",
-		"start": "cd server & npm i & DEBUG=ng-newsapp-api:* node server/index.js"
+		"start": "DEBUG=ng-newsapp:* node index.js",
+		"dev:windows": "set DEBUG=ng-newsapp:* & nodemon index.js"
 	},
 	"author": "Supratik Roy",
 	"license": "MIT",
-	"devDependencies": {
-		"electron": "^10.1.1"
+	"dependencies": {
+		"bluebird": "^3.7.2",
+		"cors": "^2.8.5",
+		"debug": "^4.1.1",
+		"dotenv": "^8.2.0",
+		"ejs": "^3.1.5",
+		"express": "^4.17.1",
+		"node-fetch": "^2.6.1"
 	},
-	"dependencies": {}
+	"devDependencies": {
+		"nodemon": "^2.0.4",
+		"electron": "^10.1.1"
+	}
 }

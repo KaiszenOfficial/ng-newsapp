@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
 
 	languageSelection: Array<any> = [];
 	defaultLanguage: any;
-	theme: string;
+	theme = 'dark';
 
 	constructor(private shared: SharedService) { }
 
@@ -23,7 +23,7 @@ export class HeaderComponent implements OnInit {
 		});
 		this.shared.setCurrentLanguage(this.defaultLanguage.code);
 		const theme = this.shared.getCurrentTheme();
-		this.theme = theme ? theme : 'dark';
+		this.theme = theme ? theme : this.theme;
 		this.setTheme(this.theme);
 	}
 

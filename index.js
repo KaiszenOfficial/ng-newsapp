@@ -1,4 +1,4 @@
-const debug    = require('debug')('ng-newsapp-api:server');
+const debug    = require('debug')('ng-newsapp:server');
 const express  = require('express');
 const http     = require('http');
 const fetch    = require('node-fetch');
