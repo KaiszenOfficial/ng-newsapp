@@ -18,13 +18,7 @@
 	width: 100% !important;
 }
 
-.search-icon {
-	cursor: pointer;
-}
 
-
-.hide {
-	display: none;
-	width: 0 !important;
-	transition: all 0.5s ease-in-out;
-}
+/* .selected {
+	background-color: #757575;
+} */

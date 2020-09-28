@@ -48,7 +48,8 @@ app.get('/headlines/:source', (req, res) => {
 	})
 	.then(response => response.json())
 	.then(data => {
-		return res.status(200).send({ headlines: data.articles, total: data.totalResults }).end();
+		let headlines = data.articles.map((a, i) => ({...a, id: i}))
+		return res.status(200).send({ headlines: headlines, total: data.totalResults }).end();
 	})
 	.catch(error => {
 		return res.status(500).send(error).end();

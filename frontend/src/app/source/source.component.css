@@ -13,3 +13,7 @@
 ::ng-deep .mat-grid-tile {
 	overflow-y: auto !important;
 }
+
+/* .selected {
+	background-color: rgb(220, 220, 220);
+} */

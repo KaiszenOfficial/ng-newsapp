@@ -39,6 +39,7 @@ export class HeaderComponent implements OnInit {
 
 	setTheme(theme: string): void {
 		this.shared.setTheme(theme);
+		document.body.classList.toggle('dark');
 	}
 
 }

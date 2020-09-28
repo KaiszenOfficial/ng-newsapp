@@ -3,6 +3,6 @@
 </mat-toolbar>
 
 <mat-selection-list [multiple]="false" (selectionChange)="onHeadlineChange()" [(ngModel)]="headline">
-	<mat-list-option *ngFor="let headline of headlines; let i = index" [value]="headline"> {{headline.title}}
+	<mat-list-option *ngFor="let headline of headlines; let i = index" [value]="headline" [ngClass]="{'selected': currentHeadline.id == headline.id}"> {{headline.title}}
 	</mat-list-option>
 </mat-selection-list>

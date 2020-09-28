@@ -1,7 +1,7 @@
 export const environment = {
 	production: true,
-	baseUrl: 'https://newsapi.org/v2',
+	baseUrl: window.location.protocol + '//' + window.location.host,
 	sourceUrl: '/sources',
-	headlineUrl: '/top-headlines',
+	headlineUrl: '/headlines',
 	articleUrl: '/article'
 };

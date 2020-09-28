@@ -22,10 +22,10 @@
             "assets": [
 			  "src/favicon.ico",
 			  "src/logo.ico",
-              "src/assets"
+			  "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
+              "src/theme.scss",
               "src/styles.css"
             ],
             "scripts": []

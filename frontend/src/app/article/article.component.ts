@@ -53,4 +53,15 @@ export class ArticleComponent implements OnInit, AfterViewInit {
 		this.shared.setCurrentArticle(option);
 	}
 
+	getImage(article: Headline): string {
+		// console.log(typeof article.urlToImage);s
+		if (article.urlToImage !== 'null') {
+			console.log(article.urlToImage);
+			return article.urlToImage;
+		} else {
+			console.log('images/img-not-found.jpg');
+			return 'assets/images/img-not-found.jpg';
+		}
+	}
+
 }

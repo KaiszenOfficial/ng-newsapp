@@ -3,5 +3,5 @@
 </mat-toolbar>
 
 <mat-selection-list [multiple]="false" (selectionChange)="onSourceChange()" [(ngModel)]="source">
-	<mat-list-option *ngFor="let source of sources; let i = index" [value]="source.id"> {{source.name}} </mat-list-option>
+	<mat-list-option *ngFor="let source of sources; let i = index" [value]="source.id" [ngClass]="{'selected': currentSource.id == source.id}" role="option"> {{source.name}} </mat-list-option>
 </mat-selection-list>

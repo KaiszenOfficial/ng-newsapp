@@ -10,8 +10,8 @@ html, body {
 body {
 	margin: 0;
 	font-family: 'Fira Sans', sans-serif !important;
-	background-color: #303030;
-	color: #ffffff;
+	/* background-color: #303030; */
+	/* color: #ffffff; */
 	overflow: hidden;
 }
 
@@ -46,4 +46,9 @@ body {
 .container {
 	padding: 1.25rem 2rem 0 2rem;
 	height: calc(100% - 64px);
+}
+
+body.dark {
+	background-color: #303030;
+	color: #ffffff;
 }
