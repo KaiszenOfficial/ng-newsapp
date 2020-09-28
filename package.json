@@ -6,7 +6,7 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"electron": "electron .",
-		"start": ""
+		"start": "node ./server/index.js"
 	},
 	"author": "Supratik Roy",
 	"license": "MIT",

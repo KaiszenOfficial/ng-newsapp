@@ -4,6 +4,7 @@ const http     = require('http');
 const fetch    = require('node-fetch');
 const bluebird = require('bluebird');
 const cors     = require('cors');
+const path     = require('path');
 
 require('dotenv').config();
 
@@ -15,7 +16,19 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+var VIEWS_PATH = path.join(__dirname, 'views');
+
+app.engine('html', require('ejs').renderFile);
+app.set('views', VIEWS_PATH);
+app.set('view engine', 'html');
+
+app.use(express.static(path.join(__dirname, 'views')));
+
 const APIKEY = process.env.API_KEY;
+
+app.get('/', (req, res) => {
+	res.render('index');
+});
 
 app.get('/sources/:language', (req, res) => {
 	let language = req.params.language;
