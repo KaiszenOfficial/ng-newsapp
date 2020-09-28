@@ -5,6 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "DEBUG=ng-newsapp-api:* node index.js",
 		"dev:windows": "set DEBUG=ng-newsapp-api:* & nodemon index.js"
 	},
 	"author": "Supratik Roy",
