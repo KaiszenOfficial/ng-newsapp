@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Source } from './entities/Source';
 import { Headline } from './entities/Headline';
 import { Observable } from 'rxjs';
@@ -20,9 +20,22 @@ export class AppComponent implements OnInit {
 
 	isLoading: boolean;
 
+	isMobile: boolean = window.innerWidth > 900 ? false : true;
+
+	@HostListener('window:resize', ['$event'])
+	onResize(event: any): void {
+		// console.log(event.target.innerWidth);
+		if (event.target.innerWidth > 900) {
+			this.isMobile = false;
+		} else {
+			this.isMobile = true;
+		}
+	}
+
 	constructor(private api: ApiService, private shared: SharedService) { }
 
 	ngOnInit(): void {
+		// console.log(window.innerWidth, this.isMobile);
 		this.isLoading = true;
 		this.shared.currentLanguage.subscribe(language => {
 			this.isLoading = true;

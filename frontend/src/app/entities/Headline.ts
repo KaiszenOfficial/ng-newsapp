@@ -1,5 +1,5 @@
 export interface Headline {
-	id: string;
+	id: number;
 	name: string;
 	author: string;
 	title: string;

@@ -34,7 +34,7 @@ export class ArticleComponent implements OnInit, AfterViewInit {
 				debounceTime(150),
 				distinctUntilChanged(),
 				tap((text) => {
-					console.log(this.search.nativeElement.value);
+					// console.log(this.search.nativeElement.value);
 					this.api.searchHeadline(this.search.nativeElement.value).subscribe(response => {
 						this.options = response.headlines;
 					}, error => {
@@ -56,10 +56,10 @@ export class ArticleComponent implements OnInit, AfterViewInit {
 	getImage(article: Headline): string {
 		// console.log(typeof article.urlToImage);s
 		if (article.urlToImage !== 'null') {
-			console.log(article.urlToImage);
+			// console.log(article.urlToImage);
 			return article.urlToImage;
 		} else {
-			console.log('images/img-not-found.jpg');
+			// console.log('images/img-not-found.jpg');
 			return 'assets/images/img-not-found.jpg';
 		}
 	}

@@ -1,8 +1,22 @@
-<mat-toolbar class="section-header mat-elevation-z3">
-	<span>Top Headlines</span>
-</mat-toolbar>
+<ng-container *ngIf="!isMobile">
+	<mat-toolbar class="section-header mat-elevation-z3">
+		<span>Top Headlines</span>
+	</mat-toolbar>
 
-<mat-selection-list [multiple]="false" (selectionChange)="onHeadlineChange()" [(ngModel)]="headline">
-	<mat-list-option *ngFor="let headline of headlines; let i = index" [value]="headline" [ngClass]="{'selected': currentHeadline.id == headline.id}"> {{headline.title}}
-	</mat-list-option>
-</mat-selection-list>
+	<mat-selection-list [multiple]="false" (selectionChange)="onHeadlineChange()" [(ngModel)]="headline">
+		<mat-list-option *ngFor="let headline of headlines; let i = index" [value]="headline.id"
+			[ngClass]="{'selected': currentHeadline.id == headline.id}"> {{headline.title}}
+		</mat-list-option>
+	</mat-selection-list>
+</ng-container>
+
+<ng-container *ngIf="isMobile">
+	<mat-form-field appearance="fill">
+		<mat-label>Top Headlines</mat-label>
+		<mat-select (selectionChange)="onHeadlineChange()" [(ngModel)]="headline">
+			<mat-option *ngFor="let headline of headlines; let i = index" [value]="headline.id">
+				{{headline.title}}
+			</mat-option>
+		</mat-select>
+	</mat-form-field>
+</ng-container>
